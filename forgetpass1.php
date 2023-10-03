@@ -1,6 +1,5 @@
 <?php 
 session_start();
-error_reporting(1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,17 +10,30 @@ error_reporting(1);
 </head>
 <body>
     <form action="#" method="POST">
-        <label for="">enter your email</label>
-        <input type="text" name="email" id=""><br>
-        <input type="submit" value="Submit" name="submit">
+        <label for="">Enter Registered email</label>
+        <input type="email" name="email" id="" required><br>
+        <input type="submit" name="submit" value="submit">
         <?php 
-        if(isset($_POST["submit"]))
+        if(isset($_POST["email"]))
         {
+            include "conn.php";
+            $query="select email from tblregister where email='".$_POST["email"]."'";
+            $result=mysqli_query($conn,$query);
+
+            if($result->num_rows>0)
+            {
+                $_SESSION["email"]=$_POST["email"];
+                $_SESSION["url"]="forget.php";
+                echo "<script>window.location='otp.php'</script>";
+            }
+            else
+            {
+                echo "<script>alert('email is not registered in the system')</script>";
+            }
             
-            $_SESSION["email"]=$_POST["email"];
-            header("location:one.php");
-        } 
-        ?>
+        }
+    ?>
     </form>
+    
 </body>
 </html>

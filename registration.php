@@ -886,7 +886,7 @@ if(mysqli_connect_errno())
                     <a href="login.php" class="signup-image-link">
                         <h3>I AM ALREADY MEMBER.</h3>
                     </a>
-                    <div class="social-login">
+                    <!-- <div class="social-login">
                         <span class="social-label">OR LOGIN WITH</span>
                         <ul class="socials">
 
@@ -895,7 +895,7 @@ if(mysqli_connect_errno())
                                 <img src="assets/img/team/twitter.png" width=30px alt="sing up image">
                                 <img src="assets/img/team/google.png" width=30px alt="sing up image">
                             </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
     </section>
