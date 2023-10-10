@@ -1,3 +1,6 @@
+<?php  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -786,17 +789,17 @@
                     <form class="register-form" id="register-form" method="post" action="Uprofile.php">
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="name" id="name" placeholder="Name" />
+                            <input type="text" name="name" id="name" value= "<?php echo $_SESSION["name"];?>" placeholder="Name" />
 
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" placeholder="Email" />
+                            <input type="email" name="email" id="email" value= "<?php echo $_SESSION["email"];?>" placeholder="Email" />
 
                         </div>
                         <div class="form-group">
                             <label for="username"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="username" name="username" id="username" placeholder="Username" />
+                            <input type="username" name="username" id="username" value= "<?php echo $_SESSION["username"];?>" placeholder="Username" />
 
                         </div>
                         <div class="form-group form-button">
@@ -805,7 +808,7 @@
                     </form>
                 </div>
                 <div class="signup-image">
-                    <figure><img src="luxury-house-real-estate-sale-property-generative-ai_169016-29361.jpg.avif" alt="sing up image"></figure>
+                    <figure><img src="assets/img/hero-img.png" alt="sing up image"></figure>
                 </div>
             </div>
     </section>
